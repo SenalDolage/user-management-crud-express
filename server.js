@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 require("dotenv").config();
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 app.use(morgan("tiny"));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -15,7 +15,7 @@ app.use("/js", express.static(path.resolve(__dirname, "assets/js")));
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-  res.send("Welcome to crud Home Page!!");
+  res.render("index");
   res.end();
 });
 

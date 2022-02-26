@@ -1,7 +1,42 @@
 <%- include('header') -%>
 
-    <div class="user-list">
-
+<div class="user-list">
+  <div class="container">
+    <div class="box-nav d-flex-justify-between py-3">
+      <a href="/add-user" class="btn btn-primary">
+        Add New User
+      </a>
     </div>
+
+    <form action="/" class="form">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Sam</td>
+            <td>sam@gmail.com</td>
+            <td>Male</td>
+            <td>Active</td>
+            <td>
+              <a href="" class="btn btn-secondary"> Edit </a>
+              <a href="" class="btn btn-danger"> Delete </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</div>
 
 <%- include('footer') -%>
