@@ -11,13 +11,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/css", express.static(path.resolve(__dirname, "assets/css")));
 app.use("/images", express.static(path.resolve(__dirname, "assets/images")));
 app.use("/js", express.static(path.resolve(__dirname, "assets/js")));
+app.use('/', require('./server/routes/router'));
 
 app.set("view engine", "ejs");
-
-app.get("/", (req, res) => {
-  res.render("index");
-  res.end();
-});
 
 app.listen(port, () =>
   console.log(`Server running on http://localhost:${port}`)
