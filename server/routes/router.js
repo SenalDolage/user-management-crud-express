@@ -1,6 +1,7 @@
 const express = require("express");
 const route = express.Router();
 const renderService = require('../services/render');
+const userController = require('../controllers/user-controller');
 
 /**
  * @description Root Route
@@ -19,5 +20,11 @@ route.get("/add-user", renderService.addUserRoute);
  * @method GET /edit-user
  */
 route.get("/edit-user", renderService.editUsereRoute);
+
+// API
+route.get("/api/user", userController.find);
+route.post("/api/user", userController.create);
+route.put("/api/user/:id", userController.update);
+route.delete("/api/user/:id", userController.delete);
 
 module.exports = route;
