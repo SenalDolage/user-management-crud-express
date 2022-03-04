@@ -23,6 +23,7 @@ route.get("/edit-user", renderService.editUsereRoute);
 
 // API
 route.get("/api/user", userController.find);
+route.get("/api/user/:id", userController.find);
 route.post("/api/user", userController.create);
 route.put("/api/user/:id", userController.update);
 route.delete("/api/user/:id", userController.delete);

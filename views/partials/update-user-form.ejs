@@ -1,0 +1,53 @@
+<form action="/api/user/<%= user._id %>" method="POST" class="form">
+  <div class="form-group mb-3">
+    <label for="inputName" class="form-label">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputName"
+      required
+      placeholder="Enter Name"
+      name="name"
+      value="<%= user.name %>"
+    />
+  </div>
+
+  <div class="mb-3 form-group">
+    <label for="exampleInputEmail1" class="form-label">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      id="exampleInputEmail1"
+      required
+      placeholder="Enter Email"
+      name="email"
+      value="<%= user.email %>"
+    />
+  </div>
+
+  <div class="mb-3 form-group">
+    <label for="inputGender" class="form-label">Gender</label>
+    <select
+      class="form-select"
+      aria-label="Default select example"
+      name="gender"
+    >
+      <option value="Male" <%= user.gender == 'Male' ? "selected" : null %>>Male</option>
+      <option value="Female" <%= user.gender == 'Female' ? "selected" : null %>>Female</option>
+    </select>
+  </div>
+
+  <div class="mb-3 form-group">
+    <label for="inputGender" class="form-label">Status</label>
+    <select
+      class="form-select"
+      aria-label="Default select example"
+      name="status"
+    >
+      <option value="Active" <%= user.status == 'Active' ? "selected" : null %>>Active</option>
+      <option value="InActive" <%= user.status == 'InActive' ? "selected" : null %>>Inactive</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>
